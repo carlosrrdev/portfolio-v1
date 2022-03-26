@@ -70,6 +70,7 @@ ol {
 header {
   color: var(--primary-light);
   background: var(--primary-dark);
+  border-bottom: 2px solid var(--secondary-dark);
 }
 nav {
   display: flex;
@@ -86,7 +87,7 @@ nav {
   justify-content: space-around;
   align-items: center;
 }
-.nav-links a[href] {
+.nav-links a {
   display: block;
   padding: var(--light-padding);
   background: transparent;
@@ -119,6 +120,13 @@ main {
 }
 
 /* Content Sections */
+.primary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem 0;
+  line-height: 2;
+}
+/* About Section */
 .about-intro {
   display: flex;
   flex-direction: column;
@@ -127,17 +135,13 @@ main {
 .about-intro img {
   display: block;
   width: 50%;
+  height: 50%;
   margin: 0 auto;
   padding: var(--base-padding);
   background-color: var(--secondary-dark);
   border-radius: 50%;
 }
-.primary-content {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem 0;
-  line-height: 2;
-}
+/* Work Section */
 .card {
   display: block;
   padding: var(--heavy-padding);
@@ -171,6 +175,7 @@ main {
 .card div a:nth-child(2) {
   color: var(--secondary-dark);
 }
+/* Contact Section */
 .contact-links a {
   font-weight: bold;
   border-bottom: 1px solid transparent;
@@ -179,9 +184,14 @@ main {
 .contact-links p {
   margin-bottom: 0.8rem;
 }
+.contact-links ul {
+  display: flex;
+  justify-content: space-between;
+}
 
 /* --Footer Section-- */
 footer {
+  margin-top: 6rem;
   background: var(--primary-dark);
   color: var(--primary-light);
 }
@@ -237,8 +247,8 @@ footer section {
     margin-left: 1.5rem;
   }
   .contact-links ul {
-    display: flex;
-    gap: 0 3.8rem;
+    justify-content: flex-start;
+    gap: 0 4rem;
   }
 }
 
