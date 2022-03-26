@@ -1,20 +1,25 @@
-/* Custom Variables */
+/* --Custom Variables-- */
 :root {
-  --primary-dark: #13213b;
+  --primary-dark: #10131a;
   --secondary-dark: #31828d;
   --primary-light: #f3f8fc;
   --container-padding: 1rem;
   --light-padding: 0.5rem;
   --base-padding: 0.8rem;
+  --heavy-padding: 1.5rem;
 }
 
-/* Global Resets */
+/* --Global Resets-- */
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -39,15 +44,29 @@ ol {
   list-style: none;
 }
 
-/* Utility */
+/* --Utility-- */
 .container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: var(--container-padding);
 }
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem 0;
+}
+.content-heading {
+  padding-bottom: var(--base-padding);
+  border-bottom: 2px solid var(--secondary-dark);
+}
+.flex-align {
+  display: flex;
+  align-items: center;
+  gap: 0 0.5rem;
+}
 
-/* Header */
+/* --Header-- */
 header {
   color: var(--primary-light);
   background: var(--primary-dark);
@@ -76,11 +95,91 @@ nav {
   text-align: center;
   border-radius: 10px;
 }
-.nav-links a[href]:hover {
-  background: var(--secondary-dark);
+
+/* --Main Content-- */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem 0;
+  color: var(--primary-dark);
+}
+/* Hero Section */
+.hero {
+  background-image: linear-gradient(#00000000 -50%, #000000),
+    url(../images/hero-banner.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--primary-light);
+  text-align: center;
+  padding: var(--heavy-padding);
+}
+.hero h1 {
+  font-size: clamp(1rem, calc(1rem + 4vw), 4rem);
 }
 
-/* Media Queries */
+/* Content Sections */
+.about-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem 0;
+}
+.about-intro img {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  padding: var(--base-padding);
+  background-color: var(--secondary-dark);
+  border-radius: 50%;
+}
+.primary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem 0;
+  line-height: 2;
+}
+.card {
+  display: block;
+  padding: var(--heavy-padding);
+  border-radius: 10px;
+  background: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 5px 10px rgba(15, 19, 24, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.card img {
+  width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+}
+.card small {
+  display: block;
+  text-align: right;
+  opacity: 0.5;
+}
+.card div {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.card div a {
+  font-weight: bold;
+  border-bottom: 1px solid transparent;
+}
+.card div a:nth-child(2) {
+  color: var(--secondary-dark);
+}
+.contact-links a {
+  font-weight: bold;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+.contact-links p {
+  margin-bottom: 0.8rem;
+}
+/* --Media Queries-- */
 @media screen and (min-width: 768px) {
   /* Header */
   nav {
@@ -93,5 +192,57 @@ nav {
   }
   .nav-links a[href] {
     padding: var(--base-padding);
+  }
+
+  /* Main Content */
+  .hero {
+    display: flex;
+    align-items: center;
+    min-height: calc(200px + 5vw);
+  }
+  .content-heading {
+    border-bottom: none;
+    padding-bottom: 0;
+    padding-right: var(--base-padding);
+    text-align: right;
+    border-right: 2px solid var(--secondary-dark);
+  }
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 0 1.5rem;
+    padding: var(--base-padding);
+  }
+  .about-intro {
+    flex-direction: row;
+  }
+  .about-intro img {
+    margin: auto 0;
+    width: 200px;
+    height: 200px;
+  }
+  .about-intro p {
+    margin-left: 1.5rem;
+  }
+  .contact-links ul {
+    display: flex;
+    gap: 0 3.8rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-links a[href]:hover {
+    background: var(--secondary-dark);
+  }
+  .card div a:hover {
+    border-bottom: 1px solid var(--secondary-dark);
+  }
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(15, 19, 24, 0.1);
+  }
+  .contact-links a:hover {
+    color: var(--secondary-dark);
+    border-bottom: 1px solid var(--secondary-dark);
   }
 }
