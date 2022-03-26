@@ -134,8 +134,8 @@ main {
 }
 .about-intro img {
   display: block;
-  width: 50%;
-  height: 50%;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
   padding: var(--base-padding);
   background-color: var(--secondary-dark);
@@ -240,8 +240,6 @@ footer section {
   }
   .about-intro img {
     margin: auto 0;
-    width: 200px;
-    height: 200px;
   }
   .about-intro p {
     margin-left: 1.5rem;
