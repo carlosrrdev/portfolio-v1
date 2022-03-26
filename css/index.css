@@ -1,6 +1,11 @@
 /* Custom Variables */
 :root {
-  --container-padding: 1.4rem;
+  --primary-dark: #13213b;
+  --secondary-dark: #31828d;
+  --primary-light: #f3f8fc;
+  --container-padding: 1rem;
+  --light-padding: 0.5rem;
+  --base-padding: 0.8rem;
 }
 
 /* Global Resets */
@@ -19,6 +24,7 @@ body {
 
 body {
   font-family: "Red Hat Text", Arial, Helvetica, sans-serif;
+  background-color: var(--primary-light);
 }
 
 a,
@@ -39,4 +45,53 @@ ol {
   max-width: 1280px;
   margin: 0 auto;
   padding: var(--container-padding);
+}
+
+/* Header */
+header {
+  color: var(--primary-light);
+  background: var(--primary-dark);
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem 0;
+}
+.nav-title {
+  font-size: clamp(0.6rem, calc(1rem + 2vw), 1.8rem);
+  font-weight: bold;
+  text-align: center;
+}
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav-links a[href] {
+  display: block;
+  padding: var(--light-padding);
+  background: transparent;
+  transition: background 0.2s ease;
+  width: 100px;
+  text-align: center;
+  border-radius: 10px;
+}
+.nav-links a[href]:hover {
+  background: var(--secondary-dark);
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+  /* Header */
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-links {
+    gap: 0 1rem;
+  }
+  .nav-links a[href] {
+    padding: var(--base-padding);
+  }
 }
