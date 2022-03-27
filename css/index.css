@@ -142,13 +142,18 @@ main {
   border-radius: 50%;
 }
 /* Work Section */
+.content-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem 0;
+}
 .card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   padding: var(--heavy-padding);
   border-radius: 10px;
   background: #ffffff;
   width: 100%;
-  max-width: 400px;
   box-shadow: 0 5px 10px rgba(15, 19, 24, 0.2);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -156,7 +161,6 @@ main {
 .card img {
   width: 100%;
   display: block;
-  margin-bottom: 1rem;
 }
 .card small {
   display: block;
@@ -253,6 +257,18 @@ footer section {
 @media screen and (min-width: 1024px) {
   .nav-links a[href]:hover {
     background: var(--secondary-dark);
+  }
+  .card {
+    flex-direction: row;
+    gap: 0 2rem;
+  }
+  .card div {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 1rem;
+  }
+  .card img {
+    max-width: 300px;
   }
   .card div a:hover {
     border-bottom: 1px solid var(--secondary-dark);
