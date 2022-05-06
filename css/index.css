@@ -126,6 +126,11 @@ main {
   gap: 5rem 0;
   line-height: 2;
 }
+.shelf {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 /* About Section */
 .about-intro {
   display: flex;
@@ -257,6 +262,10 @@ footer section {
 @media screen and (min-width: 1024px) {
   .nav-links a[href]:hover {
     background: var(--secondary-dark);
+  }
+  .shelf {
+    flex-direction: row;
+    gap: 0 1rem;
   }
   .card {
     flex-direction: row;
